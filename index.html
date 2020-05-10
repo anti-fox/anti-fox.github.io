@@ -9,12 +9,29 @@
     <meta http-equiv="Expires" content="0" />
     <title>Document</title>
     <script>
+        var aElement;
         function Init()
         {
             var name = prompt("Как тебя зовут?");
             var message = "Привет " + name + "! Это я, Данила :)";
 
-            document.getElementById("ll").innerText = message;
+            aElement = document.getElementById("ll");
+            aElement.innerText = message;
+
+            setInterval(() => {
+                var red = getRandomInt(0, 256);
+                var green = getRandomInt(0, 256);
+                var blue = getRandomInt(0, 256);
+                var alpha = getRandomInt(0, 100);
+
+                aElement.style.color = "rgb("+ red + ", "+ green +", "+ blue +", "+ alpha +")";
+            }, 50);
+        }
+
+        function getRandomInt(min, max) {
+            min = Math.ceil(min);
+             max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1)) + min;
         }
     </script>
 </head>
