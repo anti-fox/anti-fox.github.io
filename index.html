@@ -6,13 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script>
-        var name = prompt("Как тебя зовут?");
-        var message = "Привет " + name + "! Это я, Данила :)";
+        function Init()
+        {
+            var name = prompt("Как тебя зовут?");
+            var message = "Привет " + name + "! Это я, Данила :)";
 
-        document.getElementById("ll").innerText = message;
+            document.getElementById("ll").innerText = message;
+        }
     </script>
 </head>
-<body>
+<body onload="Init()">
     <div style="text-align: center;">
         <h1>
             <a id="ll" style="font-family: 'Courier New', Courier, monospace;" href="https://vk.com"></a>
